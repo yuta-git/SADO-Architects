@@ -1,4 +1,5 @@
-$(function () {
+(function ($) {
+  $(function () {
   // ==========================================
   // Hamburger menu
   // ==========================================
@@ -172,4 +173,5 @@ $(function () {
       }, 500); // _member.scss の transition duration に合わせる
     });
   }
-});
+  });
+})(jQuery);
