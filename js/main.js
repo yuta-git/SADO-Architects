@@ -27,6 +27,34 @@ $(function () {
   });
 
   // ==========================================
+  // 左右サイド（著作権・SNS）：ページ最下部付近で非表示
+  // ==========================================
+  const $sideLeft = $(".l-side-left");
+  const $sideRight = $(".l-side-right");
+
+  function updateSidebarsAtBottom() {
+    if (!$sideLeft.length && !$sideRight.length) return;
+
+    const scrollY = $(window).scrollTop();
+    const windowH = $(window).height();
+    const docH = $(document).height();
+    const thresholdPx = 80;
+
+    const atBottom = scrollY + windowH >= docH - thresholdPx;
+
+    if (atBottom) {
+      $sideLeft.addClass("is-hidden-at-bottom");
+      $sideRight.addClass("is-hidden-at-bottom");
+    } else {
+      $sideLeft.removeClass("is-hidden-at-bottom");
+      $sideRight.removeClass("is-hidden-at-bottom");
+    }
+  }
+
+  $(window).on("scroll resize", updateSidebarsAtBottom);
+  updateSidebarsAtBottom();
+
+  // ==========================================
   // Page top button
   // ==========================================
   const $pageTop = $(".js-page-top");
