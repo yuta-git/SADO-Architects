@@ -1,6 +1,8 @@
+@use "sass:math";
+
 // px → rem 変換用 function
 @function rem($px) {
-  @return ($px / 16) * 1rem;
+  @return math.div($px, 16) * 1rem;
 }
 /* 使用例
   font-size: rem(14); // 14px 相当

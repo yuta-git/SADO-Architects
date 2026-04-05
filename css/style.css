@@ -466,6 +466,12 @@ iframe {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+.l-side-left.is-hidden-at-bottom {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 @media screen and (max-width: 767px) {
   .l-side-left {
@@ -488,6 +494,12 @@ iframe {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+.l-side-right.is-hidden-at-bottom {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 @media screen and (max-width: 767px) {
   .l-side-right {
@@ -2287,4 +2299,4 @@ iframe {
   height: auto;
   object-fit: cover;
   display: block;
-}/*# sourceMappingURL=style.css.map */
+}

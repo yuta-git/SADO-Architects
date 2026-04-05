@@ -11,7 +11,10 @@ $(function () {
     $hamburger.toggleClass("is-open");
     $nav.toggleClass("is-open");
     $hamburger.attr("aria-expanded", !isOpen);
-    $hamburger.attr("aria-label", !isOpen ? "メニューを閉じる" : "メニューを開く");
+    $hamburger.attr(
+      "aria-label",
+      !isOpen ? "メニューを閉じる" : "メニューを開く",
+    );
     $("body").css("overflow", !isOpen ? "hidden" : "");
   });
 
@@ -99,7 +102,7 @@ $(function () {
     // 例: [1][2][3][4][5][6][7] → [1][2][3][4][5][6][7][clone:1][clone:2][clone:3][clone:4]
     for (let i = 0; i < cloneCount; i++) {
       $memberList.append(
-        $originalItems.eq(i).clone().attr("aria-hidden", "true")
+        $originalItems.eq(i).clone().attr("aria-hidden", "true"),
       );
     }
 
