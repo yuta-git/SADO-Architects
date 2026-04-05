@@ -1,0 +1,119 @@
+@use "../foundation/" as *;
+
+.l-footer {
+  background-color: $color-text-main;
+  padding: rem(28) 0;
+
+  @include mq(sp) {
+    padding: rem(40) 0;
+  }
+}
+
+// ==========================================
+// Inner: 3カラム（ロゴ | キャッチ+ボタン | ナビ）
+// ヘッダーと同じレイアウト
+// ==========================================
+.l-footer__inner {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-left: rem(100);
+  padding-right: rem(100);
+
+  @include mq(sp) {
+    flex-wrap: wrap; // SP: ロゴを全幅に、ボタン+ナビを横並びに
+    align-items: flex-start;
+    padding-left: rem(20);
+    padding-right: rem(20);
+    gap: rem(24);
+  }
+}
+
+// ==========================================
+// Left: ロゴ
+// ==========================================
+.l-footer__logo {
+  display: block;
+  flex-shrink: 0;
+  width: rem(140);
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @include mq(sp) {
+    width: 100%; // SP: 全幅で1行目を占有
+    max-width: rem(180);
+  }
+}
+
+// ==========================================
+// Center: キャッチ + CONTACTボタン
+// ==========================================
+.l-footer__contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: rem(14);
+  // flex: 1;
+  padding-left: rem(60);
+  padding-right: rem(60);
+
+  @include mq(sp) {
+    flex: none;
+    padding: 0;
+    gap: rem(14);
+    // SPはボタンのみ。幅を内容に合わせる
+    align-items: flex-start;
+  }
+}
+
+.l-footer__catch {
+  font-family: $font-ja;
+  font-size: rem(13);
+  font-weight: 400;
+  color: $color-white;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+  white-space: nowrap;
+
+  @include mq(sp) {
+    display: none; // SP はキャッチ非表示（ボタンのみ）
+  }
+}
+
+// ==========================================
+// Right: ナビゲーション
+// ==========================================
+.l-footer__nav {
+  flex-shrink: 0;
+}
+
+.l-footer__nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+
+  @include mq(sp) {
+    gap: rem(22);
+  }
+}
+
+.l-footer__nav-link {
+  font-family: $font-en;
+  font-size: rem(14);
+  font-weight: 400;
+  color: $color-white;
+  letter-spacing: 0.1em;
+  transition: opacity 0.3s ease;
+
+  @include hover {
+    opacity: 0.6;
+  }
+
+  @include mq(sp) {
+    font-size: rem(16);
+  }
+}

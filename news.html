@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <title>NEWS | SADO Architects</title>
+
+    <link rel="icon" href="./img/common/favicon.ico" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Noto+Sans+JP:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <!-- JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <!-- Left side: copyright -->
+    <aside class="l-side-left">
+      <p class="l-side-left__copyright">©2024 SADO Architects</p>
+    </aside>
+
+    <!-- Right side: SNS icons -->
+    <aside class="l-side-right">
+      <ul class="l-side-right__list">
+        <li class="l-side-right__item">
+          <a
+            href="#"
+            class="l-side-right__link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter"
+          >
+            <img
+              src="./img/common/Icon_twitter.svg"
+              alt="Twitter"
+              width="16"
+              height="16"
+            />
+          </a>
+        </li>
+        <li class="l-side-right__item">
+          <a
+            href="#"
+            class="l-side-right__link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <img
+              src="./img/common/Icon_instagram.svg"
+              alt="Instagram"
+              width="16"
+              height="16"
+            />
+          </a>
+        </li>
+        <li class="l-side-right__item">
+          <a
+            href="#"
+            class="l-side-right__link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+          >
+            <img
+              src="./img/common/Icon_facebook.svg"
+              alt="Facebook"
+              width="16"
+              height="16"
+            />
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <header class="l-header">
+      <div class="l-header__inner">
+        <div class="l-header__title">
+          <a href="/">
+            <img
+              src="./img/common/logo_b_pc.svg"
+              alt="SADO Architects"
+              width="120"
+              height="38"
+              loading="lazy"
+            />
+          </a>
+        </div>
+        <nav class="l-header__nav js-nav" aria-label="グローバルナビゲーション">
+          <ul class="l-header__nav__list">
+            <li class="l-header__nav__item">
+              <a href="about.html" class="l-header__nav__link js-nav-link"
+                >ABOUT US</a
+              >
+            </li>
+            <li class="l-header__nav__item">
+              <a href="works.html" class="l-header__nav__link js-nav-link"
+                >WORKS</a
+              >
+            </li>
+            <li class="l-header__nav__item">
+              <a href="member.html" class="l-header__nav__link js-nav-link"
+                >MEMBER</a
+              >
+            </li>
+            <li class="l-header__nav__item">
+              <a href="news.html" class="l-header__nav__link js-nav-link"
+                >NEWS</a
+              >
+            </li>
+            <li class="l-header__nav__item">
+              <a href="contact.html" class="l-header__nav__link js-nav-link"
+                >CONTACT</a
+              >
+            </li>
+          </ul>
+          <div class="l-header__nav__footer">
+            <ul class="l-header__nav__sns">
+              <li class="l-header__nav__sns-item">
+                <a
+                  href="#"
+                  class="l-header__nav__sns-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Twitter"
+                >
+                  <img
+                    src="./img/common/Icon_twitter.svg"
+                    alt="Twitter"
+                    width="28"
+                    height="28"
+                  />
+                </a>
+              </li>
+              <li class="l-header__nav__sns-item">
+                <a
+                  href="#"
+                  class="l-header__nav__sns-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
+                  <img
+                    src="./img/common/Icon_instagram.svg"
+                    alt="Instagram"
+                    width="28"
+                    height="28"
+                  />
+                </a>
+              </li>
+              <li class="l-header__nav__sns-item">
+                <a
+                  href="#"
+                  class="l-header__nav__sns-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                >
+                  <img
+                    src="./img/common/Icon_facebook.svg"
+                    alt="Facebook"
+                    width="28"
+                    height="28"
+                  />
+                </a>
+              </li>
+            </ul>
+            <p class="l-header__nav__copyright">©2024 SADO Architects</p>
+          </div>
+        </nav>
+        <button
+          class="l-header__hamburger js-hamburger"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+          aria-controls="global-nav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main class="l-main">
+      <section class="p-news-page">
+        <div class="p-news-page__inner l-container">
+          <h1 class="p-news-page__title c-section-title">NEWS</h1>
+
+          <ul class="p-news-page__list">
+            <li class="p-news-page__item">
+              <time datetime="20XX-XX-XX" class="p-news-page__date">20XX.mo.day</time>
+              <p class="p-news-page__text">
+                【見学会】「無垢材の色と素材感をそのまま生かした平家の家。」の完成見学会を開催いたします。
+              </p>
+            </li>
+            <li class="p-news-page__item">
+              <time datetime="20XX-XX-XX" class="p-news-page__date">20XX.mo.day</time>
+              <p class="p-news-page__text">
+                建築士と直接お話ができるオンライン相談会をご用意しました。お家を建てたい・リフォームしたいけど、何から始めたらいいかわからない。そんな方にお勧めです。随時募集しておりますので、お気軽にご連絡ください。
+              </p>
+            </li>
+            <li class="p-news-page__item">
+              <time datetime="20XX-XX-XX" class="p-news-page__date">20XX.mo.day</time>
+              <p class="p-news-page__text">
+                【年末年始】冬季休暇のお知らせ
+              </p>
+            </li>
+            <li class="p-news-page__item">
+              <time datetime="20XX-XX-XX" class="p-news-page__date">20XX.mo.day</time>
+              <p class="p-news-page__text">
+                施工実績（WORKS）に「新築戸建：無垢材の色と素材感をそのまま生かした平家の家」を追加しました。
+              </p>
+            </li>
+            <li class="p-news-page__item">
+              <time datetime="20XX-XX-XX" class="p-news-page__date">20XX.mo.day</time>
+              <p class="p-news-page__text">
+                住宅雑誌「SADO建築」の、お千本にしたい家づくり5選に、当社が建設したお家が掲載されました。ぜひお手に取ってご覧ください。
+              </p>
+            </li>
+            <li class="p-news-page__item">
+              <time datetime="20XX-XX-XX" class="p-news-page__date">20XX.mo.day</time>
+              <p class="p-news-page__text">
+                施工実績（WORKS）に「新築戸建：佐渡の自然を目の前に感じられる場所に位置する家」を追加しました。
+              </p>
+            </li>
+            <li class="p-news-page__item">
+              <time datetime="20XX-XX-XX" class="p-news-page__date">20XX.mo.day</time>
+              <p class="p-news-page__text">
+                佐渡事務所をリニューアルしました。
+              </p>
+            </li>
+            <li class="p-news-page__item">
+              <time datetime="20XX-XX-XX" class="p-news-page__date">20XX.mo.day</time>
+              <p class="p-news-page__text">
+                【見学会】満員御礼。先日のNEWSでアップした「古民家再生：2階は住居、1階はカフェを営み、屋根が特徴的な築120年の古民家。」の完成見学会は、お蔭様でご予約がいっぱいとなりました。たくさんのご予約いただきありがとうございました。
+              </p>
+            </li>
+            <li class="p-news-page__item">
+              <time datetime="20XX-XX-XX" class="p-news-page__date">20XX.mo.day</time>
+              <p class="p-news-page__text">
+                【見学会】「古民家再生：2階は住居、1階はカフェを営み、屋根が特徴的な築120年の古民家。」の完成見学会を開催いたします。
+              </p>
+            </li>
+          </ul>
+
+          <nav class="p-news-page__pagination" aria-label="ページネーション">
+            <ul class="p-news-page__pagination-list">
+              <li class="p-news-page__pagination-item is-active">
+                <a href="#" class="p-news-page__pagination-link" aria-current="page">1</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+    </main>
+
+    <!-- Page top button -->
+    <button
+      class="c-page-top js-page-top"
+      aria-label="ページの先頭へ戻る"
+    ></button>
+
+    <!-- Footer -->
+    <footer class="l-footer">
+      <div class="l-footer__inner">
+        <!-- Left: ロゴ -->
+        <a href="/" class="l-footer__logo">
+          <img
+            src="./img/common/logo_w.svg"
+            alt="SADO ARCHITECTURE"
+            width="140"
+            height="50"
+            loading="lazy"
+          />
+        </a>
+
+        <!-- Center: キャッチ + CONTACTボタン -->
+        <div class="l-footer__contact">
+          <p class="l-footer__catch">お気軽にお問い合わせください</p>
+          <a href="contact.html" class="c-btn c-btn--white">CONTACT</a>
+        </div>
+
+        <!-- Right: ナビ -->
+        <nav class="l-footer__nav" aria-label="フッターナビゲーション">
+          <ul class="l-footer__nav-list">
+            <li class="l-footer__nav-item">
+              <a href="about.html" class="l-footer__nav-link">ABOUT US</a>
+            </li>
+            <li class="l-footer__nav-item">
+              <a href="works.html" class="l-footer__nav-link">WORKS</a>
+            </li>
+            <li class="l-footer__nav-item">
+              <a href="member.html" class="l-footer__nav-link">MEMBER</a>
+            </li>
+            <li class="l-footer__nav-item">
+              <a href="news.html" class="l-footer__nav-link">NEWS</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

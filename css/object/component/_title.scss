@@ -1,0 +1,13 @@
+@use "../../foundation/" as *;
+
+.c-section-title {
+  font-family: $font-en;
+  font-size: rem(50);
+  font-weight: 500;
+  color: $color-text-main;
+  letter-spacing: 0.05em;
+
+  @include mq(sp) {
+    font-size: rem(30);
+  }
+}

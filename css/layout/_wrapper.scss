@@ -1,0 +1,27 @@
+@use "../foundation/" as *;
+
+// セクション共通の内側ラッパー（padding のみ、max-width 制約なし）
+.l-section-inner {
+  padding-left: rem(100);
+  padding-right: rem(100);
+
+  @include mq(sp) {
+    padding-left: rem(35);
+    padding-right: rem(35);
+  }
+}
+
+// max-width 付きの中央寄せコンテナ
+// 内側コンテンツ幅 1200px + padding 100px × 2 = 外側 1400px
+.l-container {
+  max-width: rem(1400);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: rem(100);
+  padding-right: rem(100);
+
+  @include mq(sp) {
+    padding-left: rem(35);
+    padding-right: rem(35);
+  }
+}

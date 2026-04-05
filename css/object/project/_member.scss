@@ -1,0 +1,143 @@
+@use "../../foundation/" as *;
+
+.p-member {
+  padding: 0 0 rem(100);
+}
+
+.p-member__title {
+  margin-bottom: rem(40);
+
+  @include mq(sp) {
+    margin-bottom: rem(28);
+  }
+}
+
+// ==========================================
+// Slider wrapper（overflow hidden なし → ボタンが外にはみ出せる）
+// ==========================================
+.p-member__slider {
+  position: relative;
+  padding-left: rem(100);
+
+  @include mq(sp) {
+    padding-left: rem(35);
+  }
+}
+
+// ==========================================
+// Track（overflow hidden でリストをマスク）
+// ==========================================
+.p-member__track {
+  overflow: hidden;
+}
+
+// ==========================================
+// List（横並び・スライドアニメーション）
+// ==========================================
+.p-member__list {
+  display: flex;
+  gap: rem(24);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+// ==========================================
+// Item（PC: 4.5枚 / SP: 1枚表示）
+// ==========================================
+.p-member__item {
+  flex: 0 0 calc(22% - rem(18)); // ~4.5 items visible on PC
+
+  @include mq(sp) {
+    flex: 0 0 100%; // SP: 1枚表示（次のカードはoverflow:hiddenで完全に隠れる）
+  }
+}
+
+// ==========================================
+// Image
+// ==========================================
+.p-member__image {
+  margin-bottom: rem(16);
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @include mq(sp) {
+    max-width: rem(220); // SP では画像サイズを抑える
+  }
+}
+
+// ==========================================
+// Text info
+// ==========================================
+.p-member__role {
+  font-family: $font-ja;
+  font-size: rem(12);
+  font-weight: 400;
+  color: $color-primary;
+  letter-spacing: 0.06em;
+  margin-bottom: rem(4);
+}
+
+.p-member__name {
+  font-family: $font-en;
+  font-size: rem(16);
+  font-weight: 400;
+  color: $color-text-main;
+  letter-spacing: 0.06em;
+}
+
+// ==========================================
+// Next arrow button
+// ==========================================
+.p-member__btn {
+  position: absolute;
+  right: rem(120); // 右サイドバー余白（100px）に合わせる
+  top: 40%; // イラスト中央あたり
+  transform: translateY(-50%);
+  width: rem(46);
+  height: rem(46);
+  border-radius: 50%;
+  background-color: $color-text-main;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+
+  // CSS のみで右向きシェブロン矢印を描画
+  &::after {
+    content: "";
+    display: block;
+    width: rem(14);
+    height: rem(14);
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg) translate(rem(-2), rem(2));
+  }
+
+  @include hover {
+    background-color: $color-primary;
+  }
+
+  @include mq(sp) {
+    right: rem(20);
+    width: rem(40);
+    height: rem(40);
+  }
+}
+
+// ==========================================
+// More button（PC: 右寄せ / SP: 中央寄せ）
+// ==========================================
+.p-member__more {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: rem(48);
+
+  @include mq(sp) {
+    justify-content: center;
+    margin-top: rem(36);
+  }
+}

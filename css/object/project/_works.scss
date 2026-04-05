@@ -1,0 +1,124 @@
+@use "../../foundation/" as *;
+
+.p-works {
+  padding: rem(120) 0 rem(100);
+
+  @include mq(sp) {
+    padding: rem(60) 0 rem(60);
+  }
+}
+
+// padding は l-section-inner クラスで管理
+
+// ==========================================
+// Title
+// ==========================================
+.p-works__title {
+  margin-bottom: rem(40);
+
+  @include mq(sp) {
+    margin-bottom: rem(28);
+  }
+}
+
+// ==========================================
+// List
+// ==========================================
+.p-works__list {
+  display: flex;
+  gap: rem(60);
+  margin-bottom: rem(40);
+
+  @include mq(sp) {
+    flex-direction: column;
+    gap: rem(48);
+    margin-bottom: rem(36);
+  }
+}
+
+.p-works__item {
+  flex: 1;
+  min-width: 0;
+}
+
+// ==========================================
+// Card link
+// ==========================================
+.p-works__link {
+  display: block;
+  color: inherit;
+
+  @include hover {
+    .p-works__image img {
+      transform: scale(1.04);
+    }
+  }
+}
+
+// ==========================================
+// Card image
+// ==========================================
+.p-works__image {
+  overflow: hidden;
+  margin-bottom: rem(16);
+
+  img {
+    width: 100%;
+    aspect-ratio: 57 / 38;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+}
+
+// ==========================================
+// Card body
+// ==========================================
+.p-works__body {
+  padding-top: rem(4);
+}
+
+.p-works__category {
+  font-family: $font-ja;
+  font-size: rem(12);
+  font-weight: 400;
+  color: $color-primary;
+  letter-spacing: 0.08em;
+  margin-bottom: rem(10);
+}
+
+.p-works__text {
+  font-family: $font-ja;
+  font-size: rem(14);
+  font-weight: 400;
+  color: $color-text-main;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  margin-bottom: rem(12);
+
+  @include mq(sp) {
+    font-size: rem(13);
+  }
+}
+
+.p-works__date {
+  display: block;
+  font-family: $font-en;
+  font-size: rem(12);
+  font-weight: 400;
+  color: $color-primary;
+  letter-spacing: 0.08em;
+}
+
+// ==========================================
+// More button（右寄せ）
+// ==========================================
+.p-works__more {
+  display: flex;
+  justify-content: flex-end;
+
+  @include mq(sp) {
+    justify-content: center;
+  }
+}

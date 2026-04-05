@@ -1,0 +1,179 @@
+@use "../../foundation/" as *;
+
+// ==========================================
+// CONTACT ページ: メインコンテンツ
+// ==========================================
+.p-contact-page {
+  padding-top: rem(160);
+  padding-bottom: rem(120);
+
+  @include mq(sp) {
+    padding-top: rem(100);
+    padding-bottom: rem(80);
+  }
+}
+
+// ==========================================
+// ページ見出し
+// ==========================================
+.p-contact-page__heading {
+  font-family: $font-en;
+  font-size: rem(80);
+  font-weight: 500;
+  color: $color-text-main;
+  letter-spacing: 0.05em;
+  margin-bottom: rem(80);
+
+  @include mq(sp) {
+    font-size: rem(40);
+    margin-bottom: rem(48);
+  }
+}
+
+// ==========================================
+// フォーム全体（見出し右列に揃える）
+// ==========================================
+.p-contact-page__form {
+  margin-left: rem(200);
+
+  @include mq(tab) {
+    margin-left: rem(120);
+  }
+
+  @include mq(sp) {
+    margin-left: 0;
+  }
+}
+
+// ==========================================
+// 各フィールド
+// ==========================================
+.p-contact-page__field {
+  margin-bottom: rem(28);
+
+  @include mq(sp) {
+    margin-bottom: rem(24);
+  }
+}
+
+.p-contact-page__label {
+  display: block;
+  color: $color-text-main;
+  font-size: rem(14);
+  letter-spacing: 0.05em;
+  margin-bottom: rem(10);
+}
+
+.p-contact-page__required {
+  font-family: $font-en;
+  font-size: rem(20);
+  color: #BBBFBA;
+  vertical-align: middle;
+  margin-left: rem(4);
+  display: inline-block;
+  // em で指定した方が、幅や文字サイズが変わっても比率が保ちやすい
+  transform: translateY(0.15em);
+}
+
+// ==========================================
+// テキスト入力
+// ==========================================
+.p-contact-page__input {
+  display: block;
+  width: 100%;
+  height: rem(52);
+  padding: 0 rem(16);
+  border: 1px solid #E8EAE2;
+  background: transparent;
+  font-family: $font-ja;
+  font-size: rem(14);
+  color: $color-text-main;
+  outline: none;
+  transition: border-color 0.3s ease;
+  appearance: none;
+  border-radius: rem(5);
+
+  &::placeholder {
+    color: rgba($color-text-main, 0.3);
+  }
+
+  &:focus {
+    border-color: $color-primary;
+  }
+}
+
+// ==========================================
+// テキストエリア
+// ==========================================
+.p-contact-page__textarea {
+  display: block;
+  width: 100%;
+  height: rem(160);
+  padding: rem(14) rem(16);
+  border: 1px solid #E8EAE2;
+  background: transparent;
+  font-family: $font-ja;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+  line-height: 1.8;
+  border-radius: rem(5);
+
+  &::placeholder {
+    color: rgba($color-text-main, 0.3);
+  }
+
+  &:focus {
+    border-color: $color-primary;
+  }
+}
+
+// ==========================================
+// 必須注記
+// ==========================================
+.p-contact-page__note {
+  font-family: $font-ja;
+  font-size: rem(12);
+  font-weight: 400;
+  color: #BBBFBA;
+  letter-spacing: 0.05em;
+  text-align: right;
+  margin-top: rem(8);
+}
+
+// ==========================================
+// 送信ボタン
+// ==========================================
+.p-contact-page__submit {
+  display: flex;
+  justify-content: center;
+  margin-top: rem(60);
+
+  @include mq(sp) {
+    margin-top: rem(48);
+  }
+}
+
+.p-contact-page__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: rem(18) rem(80);
+  border-radius: rem(50);
+  background-color: $color-primary;
+  color: $color-white;
+  font-family: $font-en;
+  font-size: rem(16);
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  transition: background-color 0.3s ease;
+
+  @include hover {
+    background-color: rgba($color-primary, 0.75);
+  }
+
+  @include mq(sp) {
+    padding: rem(16) rem(64);
+    font-size: rem(14);
+  }
+}

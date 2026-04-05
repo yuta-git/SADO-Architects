@@ -1,0 +1,151 @@
+@use "../../foundation/" as *;
+
+// ==========================================
+// MEMBER ページ: メインコンテンツ
+// ==========================================
+.p-member-page {
+  padding-top: rem(160);
+  padding-bottom: rem(120);
+
+  @include mq(sp) {
+    padding-top: rem(100);
+    padding-bottom: rem(80);
+  }
+}
+
+// ==========================================
+// ページ見出し
+// ==========================================
+.p-member-page__heading {
+  font-family: $font-en;
+  font-size: rem(80);
+  font-weight: 500;
+  color: $color-text-main;
+  letter-spacing: 0.05em;
+  margin-bottom: rem(80);
+
+  @include mq(sp) {
+    font-size: rem(40);
+    margin-bottom: rem(48);
+  }
+}
+
+// ==========================================
+// メンバーリスト
+// ==========================================
+.p-member-page__list {
+  display: flex;
+  flex-direction: column;
+  gap: rem(120);
+
+  @include mq(sp) {
+    gap: rem(80);
+  }
+}
+
+// ==========================================
+// メンバー 1件（イラスト + テキスト + 写真のグリッド）
+// ==========================================
+.p-member-page__item {
+  display: grid;
+  grid-template-columns: rem(200) 1fr;
+  column-gap: rem(80);
+  align-items: start;
+
+  @include mq(tab) {
+    grid-template-columns: rem(160) 1fr;
+    column-gap: rem(48);
+  }
+
+  @include mq(sp) {
+    display: flex;
+    flex-direction: column;
+    gap: rem(32);
+  }
+}
+
+// ==========================================
+// イラスト
+// ==========================================
+.p-member-page__illust {
+  grid-column: 1;
+  grid-row: 1;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @include mq(sp) {
+    width: rem(160);
+  }
+}
+
+// ==========================================
+// テキスト本文エリア（役職・名前・説明・写真を含む）
+// ==========================================
+.p-member-page__body {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.p-member-page__role {
+  font-size: rem(12);
+  font-weight: 400;
+  color: $color-primary;
+  letter-spacing: 0.1em;
+  margin-bottom: rem(8);
+
+  @include mq(sp) {
+    font-size: rem(11);
+  }
+}
+
+.p-member-page__name {
+  font-family: $font-en;
+  font-size: rem(40);
+  letter-spacing: 0.05em;
+  margin-bottom: rem(24);
+
+  @include mq(sp) {
+    font-size: rem(28);
+    margin-bottom: rem(16);
+  }
+}
+
+.p-member-page__text {
+  line-height: 2.5;
+  letter-spacing: 0.05em;
+  margin-bottom: rem(48);
+
+  @include mq(sp) {
+    font-size: rem(13);
+    line-height: 2.2;
+    margin-bottom: rem(32);
+  }
+}
+
+// ==========================================
+// 写真グリッド（テキスト本文の下、本文と横幅を揃える）
+// ==========================================
+.p-member-page__images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: rem(32);
+
+  @include mq(sp) {
+    gap: rem(12);
+  }
+}
+
+.p-member-page__image {
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}

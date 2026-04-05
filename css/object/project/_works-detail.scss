@@ -1,0 +1,155 @@
+@use "../../foundation/" as *;
+
+// ==========================================
+// WORKS 詳細ページ
+// ==========================================
+.p-works-detail {
+  padding-top: rem(160);
+  padding-bottom: rem(120);
+
+  @include mq(sp) {
+    padding-top: rem(100);
+    padding-bottom: rem(80);
+  }
+}
+
+.p-works-detail__title {
+  margin-bottom: rem(60);
+
+  @include mq(sp) {
+    margin-bottom: rem(36);
+  }
+}
+
+// ==========================================
+// article 全体（本文幅を制限）
+// ==========================================
+.p-works-detail__article {
+  max-width: rem(800);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// ==========================================
+// ヘッダー（カテゴリ / タイトル / 日付）
+// ==========================================
+.p-works-detail__header {
+  margin-bottom: rem(40);
+
+  @include mq(sp) {
+    margin-bottom: rem(28);
+  }
+}
+
+.p-works-detail__category {
+  font-family: $font-ja;
+  font-size: rem(12);
+  font-weight: 400;
+  color: $color-primary;
+  letter-spacing: 0.08em;
+  margin-bottom: rem(12);
+
+  @include mq(sp) {
+    font-size: rem(11);
+  }
+}
+
+.p-works-detail__headline {
+  font-family: $font-ja;
+  font-size: rem(26);
+  font-weight: 400;
+  color: $color-text-main;
+  line-height: 1.9;
+  letter-spacing: 0.05em;
+  margin-bottom: rem(16);
+
+  @include mq(sp) {
+    font-size: rem(18);
+    line-height: 1.8;
+    margin-bottom: rem(12);
+  }
+}
+
+.p-works-detail__date {
+  display: inline-block;
+  font-family: $font-en;
+  font-size: rem(13);
+  font-weight: 400;
+  color: rgba($color-text-main, 0.45);
+  letter-spacing: 0.05em;
+
+  @include mq(sp) {
+    font-size: rem(12);
+  }
+}
+
+// ==========================================
+// KVメイン画像（全幅）
+// ==========================================
+.p-works-detail__kv {
+  margin-bottom: rem(60);
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  @include mq(sp) {
+    margin-bottom: rem(40);
+  }
+}
+
+// ==========================================
+// 本文テキストブロック
+// ==========================================
+.p-works-detail__body {
+  margin-bottom: rem(60);
+
+  @include mq(sp) {
+    margin-bottom: rem(40);
+  }
+}
+
+.p-works-detail__text {
+  font-family: $font-ja;
+  font-size: rem(15);
+  font-weight: 400;
+  color: $color-text-main;
+  line-height: 2.4;
+  letter-spacing: 0.05em;
+
+  @include mq(sp) {
+    font-size: rem(13);
+    line-height: 2.2;
+  }
+}
+
+// ==========================================
+// 2カラム画像グリッド
+// ==========================================
+.p-works-detail__images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: rem(16);
+  margin-bottom: rem(60);
+
+  @include mq(sp) {
+    grid-template-columns: 1fr;
+    gap: rem(12);
+    margin-bottom: rem(40);
+  }
+}
+
+.p-works-detail__image {
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+}

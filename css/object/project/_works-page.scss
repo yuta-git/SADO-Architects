@@ -1,0 +1,328 @@
+@use "../../foundation/" as *;
+
+// ==========================================
+// WORKS ページ: メインコンテンツ
+// ==========================================
+.p-works-page {
+  padding-top: rem(160);
+  padding-bottom: rem(120);
+
+  @include mq(sp) {
+    padding-top: rem(100);
+    padding-bottom: rem(80);
+  }
+}
+
+// ==========================================
+// ページ見出し
+// ==========================================
+.p-works-page__heading {
+  font-family: $font-en;
+  font-size: rem(80);
+  font-weight: 500;
+  color: $color-text-main;
+  letter-spacing: 0.05em;
+  margin-bottom: rem(60);
+
+  @include mq(sp) {
+    font-size: rem(40);
+    margin-bottom: rem(40);
+  }
+}
+
+// ==========================================
+// フィルターエリア全体
+// ==========================================
+.p-works-page__filter {
+  margin-bottom: rem(60);
+
+  @include mq(sp) {
+    margin-bottom: rem(48);
+  }
+}
+
+// SP: フォームを開くトグルボタン（PC では非表示）
+.p-works-page__filter-toggle {
+  display: none;
+
+  @include mq(tab) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(220);
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: rem(14) rem(24);
+    border-radius: rem(50);
+    background-color: $color-primary;
+    color: $color-white;
+    font-family: $font-en;
+    font-size: rem(15);
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    transition: background-color 0.3s ease;
+
+    @include hover {
+      background-color: rgba($color-primary, 0.75);
+    }
+
+    // クリック後は非表示
+    &.is-hidden {
+      display: none;
+    }
+  }
+}
+
+// フィルター本体：PC は常に表示 / tab以下はデフォルト非表示でトグル
+.p-works-page__filter-body {
+  @include mq(tab) {
+    display: none;
+    padding-top: rem(24);
+
+    &.is-open {
+      display: block;
+    }
+  }
+}
+
+// セレクト3列
+.p-works-page__filter-selects {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: rem(24);
+  margin-bottom: rem(16);
+
+  @include mq(sp) {
+    grid-template-columns: 1fr;
+    gap: rem(12);
+  }
+}
+
+.p-works-page__filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+}
+
+.p-works-page__filter-label {
+  font-size: rem(14);
+  letter-spacing: 0.05em;
+}
+
+// セレクトボックス
+.p-works-page__select-wrap {
+  position: relative;
+
+  // 右端の矢印
+  &::after {
+    content: "";
+    position: absolute;
+    right: rem(16);
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: rem(7);
+    height: rem(7);
+    border-right: 1px solid $color-text-main;
+    border-bottom: 1px solid $color-text-main;
+    pointer-events: none;
+  }
+}
+
+.p-works-page__select {
+  display: block;
+  border-radius: rem(10);
+  width: 100%;
+  height: rem(64);
+  padding: 0 rem(40) 0 rem(16);
+  border: 1px solid #E8EAE2;
+  background: transparent;
+  font-family: $font-ja;
+  font-size: rem(13);
+  color: rgba($color-text-main, 0.5);
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    border-color: $color-primary;
+  }
+
+  &:not([value=""]) {
+    color: $color-text-main;
+  }
+}
+
+// チェックボックス行 + SEARCHボタン
+.p-works-page__filter-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: rem(24);
+  margin-top: rem(4);
+
+  @include mq(sp) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: rem(20);
+  }
+}
+
+// 規模：見出しを上、チェックボックスを下段に配置
+.p-works-page__filter-scale {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: rem(10);
+  flex: 1;
+  min-width: 0;
+}
+
+.p-works-page__filter-checkbox-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: rem(10) rem(28);
+}
+
+.p-works-page__checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: rem(10);
+  cursor: pointer;
+}
+
+.p-works-page__checkbox {
+  width: rem(22);
+  height: rem(22);
+  border: 1px solid #E8EAE2;
+  border-radius: rem(4);
+  background-color: $color-white;
+  appearance: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
+  transition: border-color 0.2s ease;
+
+  &:checked {
+    border-color: $color-primary;
+    background-color: $color-primary;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: rem(4);
+      left: rem(6);
+      width: rem(6);
+      height: rem(10);
+      border-right: 2px solid $color-white;
+      border-bottom: 2px solid $color-white;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.p-works-page__checkbox-text {
+  font-family: $font-ja;
+  font-size: rem(14);
+  letter-spacing: 0.03em;
+}
+
+// SEARCHボタン
+.p-works-page__search-btn {
+  flex-shrink: 0;
+  width: rem(220);
+  max-width: 100%;
+  padding: rem(14) rem(24);
+  border-radius: rem(50);
+  background-color: $color-primary;
+  color: $color-white;
+  font-family: $font-en;
+  letter-spacing: 0.15em;
+  transition: background-color 0.3s ease;
+
+  @include hover {
+    background-color: rgba($color-primary, 0.75);
+  }
+
+  @include mq(sp) {
+    width: 100%;
+    text-align: center;
+    padding: rem(14) 0;
+  }
+}
+
+// ==========================================
+// 作品リスト（2カラムグリッド）
+// ==========================================
+.p-works-page__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: rem(48) rem(40);
+
+  @include mq(sp) {
+    grid-template-columns: 1fr;
+    gap: rem(48);
+  }
+}
+
+.p-works-page__item {
+  min-width: 0;
+}
+
+.p-works-page__link {
+  display: block;
+  color: inherit;
+
+  @include hover {
+    .p-works-page__image img {
+      transform: scale(1.04);
+    }
+  }
+}
+
+.p-works-page__image {
+  overflow: hidden;
+  margin-bottom: rem(16);
+
+  img {
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+}
+
+.p-works-page__body {
+  padding-top: rem(4);
+}
+
+.p-works-page__category {
+  font-size: rem(12);
+  color: $color-primary;
+  letter-spacing: 0.08em;
+  margin-bottom: rem(8);
+}
+
+.p-works-page__text {
+  font-size: rem(14);
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  margin-bottom: rem(10);
+
+  @include mq(sp) {
+    font-size: rem(13);
+  }
+}
+
+.p-works-page__date {
+  display: block;
+  font-family: $font-en;
+  font-size: rem(12);
+  font-weight: 400;
+  color: $color-primary;
+  letter-spacing: 0.08em;
+}
