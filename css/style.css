@@ -2254,10 +2254,6 @@ iframe {
 }
 
 .p-works-detail__text {
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 0.9375rem;
-  font-weight: 400;
-  color: #585A55;
   line-height: 2.4;
   letter-spacing: 0.05em;
 }
