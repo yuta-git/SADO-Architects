@@ -20,20 +20,17 @@
 
         <!-- Right: ナビ -->
         <nav class="l-footer__nav" aria-label="フッターナビゲーション">
-          <ul class="l-footer__nav-list">
-            <li class="l-footer__nav-item">
-              <a href="about.html" class="l-footer__nav-link">ABOUT US</a>
-            </li>
-            <li class="l-footer__nav-item">
-              <a href="works.html" class="l-footer__nav-link">WORKS</a>
-            </li>
-            <li class="l-footer__nav-item">
-              <a href="member.html" class="l-footer__nav-link">MEMBER</a>
-            </li>
-            <li class="l-footer__nav-item">
-              <a href="news.html" class="l-footer__nav-link">NEWS</a>
-            </li>
-          </ul>
+          <?php
+          wp_nav_menu(
+            array(
+              'theme_location' => 'footer',
+              'depth'            => 1,
+              'container'        => false,
+              'menu_class'       => 'l-footer__nav-list',
+              'fallback_cb'      => false,
+            )
+          );
+          ?>
         </nav>
       </div>
     </footer>

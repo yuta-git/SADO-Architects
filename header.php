@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="" />
+    <meta name="description" content="<?php bloginfo('description'); ?>" />
 
     <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/img/common/favicon.ico" />
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
@@ -22,7 +22,7 @@
     <header class="l-header">
       <div class="l-header__inner">
         <div class="l-header__title">
-          <a href="/">
+          <a href="<?php echo home_url('/'); ?>">
             <img
               src="<?php echo get_template_directory_uri(); ?>/img/common/logo_b_pc.svg"
               alt="SADO Architects"
@@ -32,34 +32,18 @@
             />
           </a>
         </div>
-        <nav class="l-header__nav js-nav" aria-label="グローバルナビゲーション">
-          <ul class="l-header__nav__list">
-            <li class="l-header__nav__item">
-              <a href="about.html" class="l-header__nav__link js-nav-link"
-                >ABOUT US</a
-              >
-            </li>
-            <li class="l-header__nav__item">
-              <a href="works.html" class="l-header__nav__link js-nav-link"
-                >WORKS</a
-              >
-            </li>
-            <li class="l-header__nav__item">
-              <a href="member.html" class="l-header__nav__link js-nav-link"
-                >MEMBER</a
-              >
-            </li>
-            <li class="l-header__nav__item">
-              <a href="news.html" class="l-header__nav__link js-nav-link"
-                >NEWS</a
-              >
-            </li>
-            <li class="l-header__nav__item">
-              <a href="contact.html" class="l-header__nav__link js-nav-link"
-                >CONTACT</a
-              >
-            </li>
-          </ul>
+        <nav class="l-header__nav js-nav">
+          <?php
+          wp_nav_menu(
+            array(
+              'theme_location' => 'global',
+              'depth'            => 1,
+              'container'        => false,
+              'menu_class'       => 'l-header__nav__list',
+              'fallback_cb'      => false,
+            )
+          );
+          ?>
           <div class="l-header__nav__footer">
             <ul class="l-header__nav__sns">
               <li class="l-header__nav__sns-item">
@@ -68,7 +52,6 @@
                   class="l-header__nav__sns-link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Twitter"
                 >
                   <img
                     src="<?php echo get_template_directory_uri(); ?>/img/common/Icon_twitter.svg"
@@ -84,7 +67,6 @@
                   class="l-header__nav__sns-link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Instagram"
                 >
                   <img
                     src="<?php echo get_template_directory_uri(); ?>/img/common/Icon_instagram.svg"
@@ -100,7 +82,6 @@
                   class="l-header__nav__sns-link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Facebook"
                 >
                   <img
                     src="<?php echo get_template_directory_uri(); ?>/img/common/Icon_facebook.svg"
@@ -116,7 +97,6 @@
         </nav>
         <button
           class="l-header__hamburger js-hamburger"
-          aria-label="メニューを開く"
           aria-expanded="false"
           aria-controls="global-nav"
         >
